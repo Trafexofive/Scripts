@@ -9,6 +9,4 @@ fi
 #curl -O "https://github.com/Suwayomi/Tachidesk-Server/releases/download/v0.7.0/Tachidesk-Server-v0.7.0-r1197-macOS-x64.zip"
 
 
-brew install lua tree fzf 
-brew tap fwartner/tap
-brew install fwartner/tap/mac-cleanup
+brew install go lua tree fzf glow bat
