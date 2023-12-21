@@ -4,6 +4,7 @@ then
   rm -rf $HOME/.brew && rm -rf $HOME_BREW/.brew && git clone --depth=1 https://github.com/Homebrew/brew $HOME_BREW/.brew
   mkdir /Users/mlamkadm/goinfre/mlamkadm/.cache  
   mkdir /Users/mlamkadm/goinfre/mlamkadm/.temp
+  mkdir /Users/mlamkadm/goinfre/mlamkadm/.logs
 
 fi
 
@@ -21,4 +22,5 @@ do
 done
 brew update
 
+clear
 echo "done!!(✜‿‿✜)"
