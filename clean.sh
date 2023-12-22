@@ -27,6 +27,7 @@ print_faces()
         echo "-------- ${elements[i]}${faces[i]}${elements[i]} --------"
         print_banner
         uptime
+        echo "---------------------------------------------------------"
         sleep 0.4
         clear
     done
