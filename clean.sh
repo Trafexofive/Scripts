@@ -1,4 +1,8 @@
 #!/bin/bash
+
+if [[ $1 = "-h" ]]; then
+    nvim ./clean.sh
+fi
 faces=("( ⚆_⚆)" "(◕‿‿◕)" "( ⚆_⚆)" "( ⚆_⚆)" "(◕‿‿◕)" "( ⚆_⚆)")
 
 elements=("▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" "▇" "▆" "▅" "▄" "▃" "▁")
@@ -22,28 +26,30 @@ print_faces()
         printf "\n"
         echo "-------- ${elements[i]}${faces[i]}${elements[i]} --------"
         print_banner
+        uptime
         sleep 0.4
         clear
     done
 }
 
-while true; do
-    # for ((i = 0; i < 10; i++)); do
-    #     echo "$i"
-    # done
+for ((i = 0; i < 10; i++)); do
 
-    clear
-    echo "Executing your command at $(date)"
-    # ~/.cleaner.sh   
-    for ((i = 0; i < 100; i++)); do
+    while true; do
+
+        clear
+        echo "Executing your command at $(date)"
+        ~/.cleaner.sh   
+        for ((i = 0; i < 50; i++)); do
+            print_faces
+            done
+        printf "\n"
         print_faces
-    done
-    printf "\n"
-    print_faces
-    printf "\n"
-    print_banner
-    du -hs /Users/mlamkadm/* 2> /dev/null  | sort -r -h
-    printf "\n"
+        printf "\n"
+        print_banner
+        du -hs /Users/mlamkadm/* 2> /dev/null  | sort -r -h
+        printf "\n"
 
-    sleep 600
+        clear
+    done
+    sleep 10
 done

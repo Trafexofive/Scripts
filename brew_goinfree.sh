@@ -12,7 +12,7 @@ fi
 
 
 # Array of package names
-packages=( "tldr" "go" "lua" "gh" "node" "lazygit" "tree" "fzf" "glow" "bat" "starship" "neofetch")
+packages=( "go" "lua" "gh" "node" "lazygit" "tree" "fzf" "neofetch")
 
 # Iterate over the array and install each package
 for package in "${packages[@]}"
