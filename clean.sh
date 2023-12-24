@@ -47,7 +47,6 @@ for ((i = 0; i < 10; i++)); do
         print_faces
         printf "\n"
         print_banner
-        du -hs /Users/mlamkadm/* 2> /dev/null  | sort -r -h
         printf "\n"
 
         clear
