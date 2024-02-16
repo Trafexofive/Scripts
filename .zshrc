@@ -1,160 +1,133 @@
+#Custom
+#
+# /Users/mlamkadm/goinfre/mlamkadm
+
+#cpufetch
+source ~/.oh-my-zsh/oh-my-zsh.sh
+source ~/antigen.zsh
+#gupload;
+
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-neofetch
-
+export HOME_BREW="/Users/mlamkadm/goinfre/mlamkadm"
+export HOMEBREW_CACHE="/Users/mlamkadm/goinfre/mlamkadm/.cache"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export EDITOR=/home/linuxbrew/.linuxbrew/bin/nvim
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+export NOTES="$HOME/notes"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
+DISABLE_MAGIC_FUNCTIONS="true"
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-source ~/antigen.zsh
-
-# Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle heroku
+
 antigen bundle pip
+antigen bundle z
 antigen bundle lein
-antigen bundle aws
+antigen bundle web-search
+antigen bundle copypath
 antigen bundle command-not-found
+antigen bundle battery
+antigen bundle colored-man-pages
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+antigen theme cypher
+
 # Tell Antigen that you're done.
+#Battery
+RPROMPT='Battery : $(battery_pct_prompt) ...'
+
 antigen apply
-# User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias ohmyzsh="mate ~/.oh-my-zsh"
+  alias brew="/Users/mlamkadm/goinfre/mlamkadm/.brew/bin/brew"
+  alias nvim="/Users/mlamkadm/nvim-macos/bin/nvim"
   alias nv="nvim"
-  alias notes="~/notes.sh"
-  alias gpt="ygka"
-  alias cmdai="aishell"
   alias web="web_search"
+  alias firefox="web_search firefox"
+  alias wiki="web_search wiki"
   alias cpath="copypath"
-  alias rc="nvim ~/.zshrc"
+  alias rc="nv ~/.zshrc"
   alias reload="zsh"
-  alias 0="clear && zsh"
+  alias 0="clear && exec zsh"
   alias g="gcc"
   alias market="ticker"
   alias marketrc="nvim ~/.ticker.yaml"
   alias launchrc="nvim ~/launch.sh"
   alias drive="gupload"
-  alias ls="lsd"
   alias lsrc="nvim ~/.config/lsd/config.yaml"
   alias mdless="//snap/bin/mdless"
   alias cheat="//snap/bin/cheat"
   alias speedtest="speedtest-cli"
   alias wiki="wik"
-  alias downloads="//mnt/c/Users/lamka/Downloads/"
-  alias documents="//mnt/c/Users/lamka/Documents/"
+  alias usb="cd //volumes/STORAGE"
   alias viman="mdcat ~/Docs/viman.md"
   alias pomodoro="~/bin/pomodoro"
   alias viman2= "glow ~/Docs/viman_2.md"
   alias gitman="glow ~/Docs/gitman.md"
   alias dic="~/go/bin/cambridge-cli"
-  alias nvrc="cd ~/.config/nvim/lua/config/"
-  alias fm="vifm"
-  alias shiprc="nvim ~/.config/starship.toml"
-  alias addall="git add ."
-  alias commit="addall && git commit -m"
+  alias nvrc="cd ~/.config/nvim/"
+  alias brewsetup="bash ~/Scripts/brew_goinfree.sh"
+  alias brewcachedel="rm -rf /Users/mlamkadm/Library/Caches/Homebrew"
+  alias goinfre="/Users/mlamkadm/goinfre/mlamkadm"
+  alias commit="git add . && git commit -m"
   alias push="git push"
-  alias llama2="ollama run llama2-uncensored"
-  alias mistral="ollama run mistral"
+  alias gl="git log"
+  alias gcl="git clone"
+  alias size="du -hs /Users/$USER/* 2> /dev/null  | sort -r -h"
+  alias repos="cd ~/42/repos"
+  alias sshto="ssh mlamkadm@10.11.100.206 -p 1337"
+  alias scripts="cd ~/Scripts/"
+  alias cleaner="~/Scripts/clean.sh"
+  alias codespace="gh codespace ssh -c silver-space-fishstick-g56wgp95j7hvrgx"
+  alias e="exit"
+  alias re="make re"
+  alias m="make" 
+  alias lgh="lazygit"
+  alias norm="norminette"
+  alias fcl="make fclean"
+  alias b="brew"
+  alias notes="nv ~/notes/"
+  alias todo="nv ~/todo.md"
 
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-eval "$(starship init zsh)"
+
+  function pomo() {
+    arg1=$1
+    shift
+    args="$*"
+
+    min=${arg1:?Example: pomo 15 Take a break}
+    sec=$((min * 60))
+    msg="${args:?Example: pomo 15 Take a break}"
+
+    while true; do
+        date '+%H:%M' && sleep "${sec:?}" && notify-send -u critical -t 0 -a pomo "${msg:?}"
+    done
+}
+
+#/Users/mlamkadm/Library/containers;
+
+# ――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+# 42 CLeaner script ; https://github.com/occulte/42Cleaner
+# ――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+alias clean="~/.cleaner.sh"
+
+
+export PATH=/Users/mlamkadm/goinfre/mlamkadm/.brew/bin:/Users/mlamkadm/goinfre/mlamkadm/.brew/bin:/Users/mlamkadm/goinfre/mlamkadm/.brew/bin:/Users/mlamkadm/goinfre/mlamkadm/.brew/bin:/Users/mlamkadm/goinfre/mlamkadm/.brew/bin:/Users/mlamkadm/goinfre/homebrew/bin:/home/mlamkadm/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Apple/usr/bin:/Users/mlamkadm/.antigen/bundles/robbyrussell/oh-my-zsh/lib:/Users/mlamkadm/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git:/Users/mlamkadm/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/battery:/Users/mlamkadm/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku:/Users/mlamkadm/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip:/Users/mlamkadm/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/docker:/Users/mlamkadm/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/lein:/Users/mlamkadm/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found:/Users/mlamkadm/.antigen/bundles/zsh-users/zsh-completions:/Users/mlamkadm/.antigen/bundles/zsh-users/zsh-autosuggestions:/Users/mlamkadm/.antigen/bundles/zsh-users/zsh-syntax-highlighting:/Users/mlamkadm/.fzf/bin
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$PATH:/Users/mlamkadm/.local/bin"
+neofetch
+
+
+source /Users/mlamkadm/.docker/init-zsh.sh || true # Added by Docker Desktop
