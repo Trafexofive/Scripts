@@ -20,11 +20,11 @@ export HOMEBREW_CACHE="/Users/mlamkadm/goinfre/mlamkadm/.cache"
 export RUSTUP_HOME="/Users/mlamkadm/goinfre/mlamkadm/.rustup"
 export CARGO_HOME="/Users/mlamkadm/goinfre/mlamkadm/.cargo"
 
-# packages="go lua gh node tree fzf neofetch"
-#
-# for package in $packages; do
-#     brew install $package
-# done
+packages="go lua gh node tree fzf neofetch"
+
+for package in $packages; do
+    brew install $package
+done
 
 packages=" bat ripgrep lazygit tree ytop"
 
@@ -33,6 +33,7 @@ for package in $packages; do
 done
 
 brew update
+cargo install --locked yazi-fm yazi-cli
 
 clear
 echo "Default Install Done!!(✜‿‿✜)"
