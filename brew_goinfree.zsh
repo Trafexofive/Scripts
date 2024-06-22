@@ -10,10 +10,12 @@ ensure_folder_exists() {
     fi
 }
 
-ensure_folder_exists "/Users/mlamkadm/goinfre/mlamkadm/.brew"
-ensure_folder_exists "/Users/mlamkadm/goinfre/mlamkadm/.cache"
-ensure_folder_exists "/Users/mlamkadm/goinfre/mlamkadm/.rustup"
-ensure_folder_exists "/Users/mlamkadm/goinfre/mlamkadm/.cargo"
+GOINFRE="/Users/mlamkadm/goinfre/mlamkadm/"
+
+ensure_folder_exists "$GOINFRE/.brew"
+ensure_folder_exists "$GOINFRE/.cache"
+ensure_folder_exists "$GOINFRE/.rustup"
+ensure_folder_exists "$GOINFRE/.cargo"
 
 export HOME_BREW="/Users/mlamkadm/goinfre/mlamkadm"
 export HOMEBREW_CACHE="/Users/mlamkadm/goinfre/mlamkadm/.cache"
