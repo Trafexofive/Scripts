@@ -10,11 +10,10 @@ ensure_folder_exists() {
     fi
 }
 
-
-# ensure_folder_exists('/Users/mlamkadm/goinfre/mlamkadm/.brew')
-# ensure_folder_exists(/Users/mlamkadm/goinfre/mlamkadm/.cache)
-# ensure_folder_exists(/Users/mlamkadm/goinfre/mlamkadm/.rustup)
-# ensure_folder_exists(/Users/mlamkadm/goinfre/mlamkadm/.cargo)
+ensure_folder_exists "/Users/mlamkadm/goinfre/mlamkadm/.brew"
+ensure_folder_exists "/Users/mlamkadm/goinfre/mlamkadm/.cache"
+ensure_folder_exists "/Users/mlamkadm/goinfre/mlamkadm/.rustup"
+ensure_folder_exists "/Users/mlamkadm/goinfre/mlamkadm/.cargo"
 
 export HOME_BREW="/Users/mlamkadm/goinfre/mlamkadm"
 export HOMEBREW_CACHE="/Users/mlamkadm/goinfre/mlamkadm/.cache"
